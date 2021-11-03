@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://172.17.0.2:3306/board
+    #도커 컨테이너 내 mariadb 주소
+    #같은 도커 내에서 2개의 컨테이너가 돌아가며 실행되기에 위와 같이 설정 후 사용
+    #mariadb 컨테이너의 주소에 맞춰 수정 필요
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: mariadb
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  jpa:
+    open-in-view: false
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
