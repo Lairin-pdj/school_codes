@@ -38,9 +38,8 @@ public class BoardController {
 
         return "redirect:/";
     }
-    // 여기서 부터 작성, 주석을 해제하고 사용하세요
+    
     // 게시글 상세 조회 페이지
-    // detail.html을 반환해야함
     @GetMapping("/post/{no}")
     public String detail(@PathVariable("no") Long no, Model model) {
         BoardDto boardPost = boardService.getPost(no);
@@ -49,7 +48,6 @@ public class BoardController {
     }
 
     // 게시글 수정 페이지
-    // update.html을 반환해야함
     @GetMapping("/post/edit/{no}")
     public String edit(@PathVariable("no") Long no, Model model) {
         BoardDto boardPost = boardService.getPost(no);
@@ -59,7 +57,6 @@ public class BoardController {
 
     // 게시글 수정
     // 수정 후 초기 페이지로 돌아가야함
-    // 게시글 추가
     @PutMapping("/post/edit/{no}")
     public String update(BoardDto boardDTO) {
         boardService.savePost(boardDTO);
